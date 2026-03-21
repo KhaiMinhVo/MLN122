@@ -1,0 +1,31 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#06080D"/>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#213246" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#06080D" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="560" fill="url(#sky)"/>
+  <g opacity="0.18" fill="#D6A455">
+    <rect x="40" y="700" width="110" height="330"/>
+    <rect x="180" y="620" width="170" height="410"/>
+    <rect x="390" y="760" width="95" height="270"/>
+    <rect x="520" y="650" width="180" height="380"/>
+    <rect x="740" y="720" width="130" height="310"/>
+    <rect x="910" y="590" width="210" height="440"/>
+    <rect x="1160" y="740" width="120" height="290"/>
+    <rect x="1320" y="670" width="200" height="360"/>
+    <rect x="1560" y="780" width="110" height="250"/>
+    <rect x="1700" y="640" width="180" height="390"/>
+  </g>
+  <g opacity="0.26" stroke="#93E7FF" stroke-width="1.4">
+    <path d="M0 300H500L670 430H1190L1410 260H1920"/>
+    <path d="M0 500H340L560 380H930L1130 560H1920"/>
+  </g>
+  <g opacity="0.24" fill="#9FEAFF">
+    <circle cx="670" cy="430" r="6"/>
+    <circle cx="1130" cy="560" r="6"/>
+    <circle cx="1410" cy="260" r="6"/>
+  </g>
+</svg>
