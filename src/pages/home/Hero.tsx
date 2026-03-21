@@ -40,19 +40,16 @@ export default function Hero() {
 
             <div className="relative z-10 text-center max-w-5xl mx-auto px-4 animate-fade-in">
                 <div className={`rounded-2xl px-4 py-6 md:px-8 md:py-8 backdrop-blur-sm border ${theme === "dark" ? "bg-slate-900/35 border-slate-700/40" : "bg-white/55 border-white/70"}`}>
-                    <h1 className="font-bold mb-5 tracking-tight leading-[1.1] text-4xl md:text-6xl lg:text-7xl">
+                    <h1 className="font-bold mb-6 tracking-tight leading-[1.15] text-5xl md:text-6xl lg:text-7xl">
                         <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent drop-shadow-sm">
                             Công nghiệp hóa, hiện đại hóa
                         </span>
-                        <span className={theme === "dark" ? "block text-slate-100" : "block text-slate-800"}>
-                            trong thời đại
-                        </span>
-                        <span className="block bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-200 bg-clip-text text-transparent drop-shadow-sm">
-                            đứt gãy công nghệ
+                        <span className="block mt-2 bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-200 bg-clip-text text-transparent drop-shadow-sm text-5xl md:text-6xl">
+                            trong thời đại đứt gãy công nghệ
                         </span>
                     </h1>
-                    <p className={`text-lg md:text-2xl leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                        Trình bày cơ sở lý luận, tác động hai mặt của công nghệ 4.0 và yêu cầu gắn công nghiệp hóa với đổi mới sáng tạo ở Việt Nam.
+                    <p className={`text-base md:text-xl leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
+                        Trình bày cơ sở lý luận, tác động hai mặt của công nghệ 4.0 và yêu cầu gắn công nghiệp hóa với đổi mới sáng tạo
                     </p>
                 </div>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">

@@ -3,13 +3,14 @@ import { useTheme } from "../../contexts/ThemeContext";
 import { motion, easeInOut } from "framer-motion";
 
 const cardVariants = {
-    hidden: { opacity: 0, y: 32 },
+    hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
     visible: (index: number) => ({
         opacity: 1,
         y: 0,
+        filter: "blur(0px)",
         transition: {
-            duration: 0.5,
-            delay: index * 0.12,
+            duration: 0.6,
+            delay: index * 0.15,
             ease: easeInOut,
         },
     }),
@@ -35,13 +36,15 @@ export default function Models() {
                     <motion.div
                         className="grid md:grid-cols-3 gap-6"
                         initial="hidden"
-                        animate="visible"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
                         variants={{
                             hidden: { opacity: 0 },
                             visible: {
                                 opacity: 1,
                                 transition: {
-                                    staggerChildren: 0.12,
+                                    staggerChildren: 0.15,
+                                    delayChildren: 0,
                                 },
                             },
                         }}
@@ -75,13 +78,15 @@ export default function Models() {
                     <motion.div
                         className="grid md:grid-cols-2 gap-6"
                         initial="hidden"
-                        animate="visible"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
                         variants={{
                             hidden: { opacity: 0 },
                             visible: {
                                 opacity: 1,
                                 transition: {
-                                    staggerChildren: 0.12,
+                                    staggerChildren: 0.15,
+                                    delayChildren: 0,
                                 },
                             },
                         }}
