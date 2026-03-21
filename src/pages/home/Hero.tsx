@@ -17,7 +17,7 @@ export default function Hero() {
         <section id="mo-dau" className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/bg-tech-industrial.svg"
+                    src="/tải xuống (5).jpg"
                     alt="Hero Background"
                     className="w-full h-full object-cover transition-opacity duration-300"
                     style={{

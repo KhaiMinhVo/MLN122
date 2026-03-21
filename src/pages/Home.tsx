@@ -84,12 +84,36 @@ export default function Home() {
         <Footer />
       </motion.div>
       <style>{`
+        html,
+        body,
+        #root {
+          height: 100%;
+        }
+
         html {
           scroll-behavior: smooth;
         }
 
+        body {
+          scroll-snap-type: y mandatory;
+        }
+
         section {
-          scroll-margin-top: 92px;
+          min-height: 100dvh;
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+          scroll-margin-top: 84px;
+        }
+
+        @media (max-width: 1024px) {
+          body {
+            scroll-snap-type: y proximity;
+          }
+
+          section {
+            min-height: auto;
+            scroll-snap-stop: normal;
+          }
         }
 
         @keyframes fadeInUp {
