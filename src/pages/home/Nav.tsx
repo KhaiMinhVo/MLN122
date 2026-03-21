@@ -1,10 +1,14 @@
+import { motion } from "framer-motion";
 import { useTheme } from "../../contexts/ThemeContext";
 
 export default function Nav() {
     const { theme } = useTheme();
 
     return (
-        <nav
+        <motion.nav
+            initial={{ opacity: 0, y: -18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className={`fixed top-0 w-full z-50 backdrop-blur-md transition-colors duration-300 ${theme === "dark"
                 ? "bg-gradient-to-r from-slate-900/95 via-slate-900/90 to-slate-900/95 border-b border-slate-700/40"
                 : "bg-gradient-to-r from-white/90 via-white/85 to-white/90 border-b border-slate-200/70"
@@ -28,51 +32,69 @@ export default function Nav() {
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <div
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            hidden: { opacity: 0, y: -8 },
+                            visible: {
+                                opacity: 1,
+                                y: 0,
+                                transition: {
+                                    delayChildren: 0.12,
+                                    staggerChildren: 0.06,
+                                },
+                            },
+                        }}
                         className={`hidden md:flex items-center gap-1 rounded-full px-3 py-2 ${theme === "dark"
                             ? "bg-slate-800/60 ring-1 ring-slate-600/50"
                             : "bg-white/80 ring-1 ring-slate-200"
                             }`}
                     >
-                        <a
+                        <motion.a
+                            variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
                             href="#mo-dau"
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
                             Mở Đầu
-                        </a>
-                        <a
+                        </motion.a>
+                        <motion.a
+                            variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
                             href="#about"
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
                             Phần I
-                        </a>
-                        <a
+                        </motion.a>
+                        <motion.a
+                            variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
                             href="#revolutions"
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
                             Phần II - III
-                        </a>
-                        <a
+                        </motion.a>
+                        <motion.a
+                            variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
                             href="#models"
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
                             Phần IV - V
-                        </a>
-                        <a
+                        </motion.a>
+                        <motion.a
+                            variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
                             href="#vietnam"
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1 transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
                             Tổng Kết
-                        </a>
-                    </div>
+                        </motion.a>
+                    </motion.div>
 
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 }

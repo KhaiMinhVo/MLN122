@@ -1,7 +1,8 @@
 import { Toaster } from "./components/ui/sonner";
 import { TooltipProvider } from "./components/ui/tooltip";
 import NotFound from "./pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
+import { AnimatePresence, motion } from "framer-motion";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -17,21 +18,33 @@ import Login from "./pages/Login";
 import Support from "./pages/Support";
 
 function Router() {
+  const [location] = useLocation();
+
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/login"} component={Login} />
-      <Route path={"/support"} component={Support} />
-      <Route path={"/case-generator"} component={CaseGenerator} />
-      <Route path={"/concept-example"} component={ConceptExample} />
-      <Route path={"/mindmap"} component={MindMap} />
-      <Route path={"/giai-cap-mindmap"} component={FinalMindMap} />
-      <Route path={"/chat"} component={Chatbot} />
-      <Route path={"/practice"} component={Practice} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={location}
+        initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+        transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Switch location={location}>
+          <Route path={"/"} component={Home} />
+          <Route path={"/login"} component={Login} />
+          <Route path={"/support"} component={Support} />
+          <Route path={"/case-generator"} component={CaseGenerator} />
+          <Route path={"/concept-example"} component={ConceptExample} />
+          <Route path={"/mindmap"} component={MindMap} />
+          <Route path={"/giai-cap-mindmap"} component={FinalMindMap} />
+          <Route path={"/chat"} component={Chatbot} />
+          <Route path={"/practice"} component={Practice} />
+          <Route path={"/404"} component={NotFound} />
+          {/* Final fallback route */}
+          <Route component={NotFound} />
+        </Switch>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
