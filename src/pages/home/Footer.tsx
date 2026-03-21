@@ -4,7 +4,7 @@ export default function Footer() {
     const { theme } = useTheme();
 
     return (
-        <footer className={`py-12 px-4 border-t transition-colors duration-300 ${theme === "dark" ? "bg-slate-900 border-slate-700" : "bg-slate-100 border-slate-300"}`}>
+<footer id="footer" className={`pt-4 pb-48 px-4 scroll-mt-[84px] border-t transition-colors duration-300 ${theme === "dark" ? "bg-slate-900 border-slate-700" : "bg-slate-100 border-slate-300"}`}>
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-4 gap-8 mb-8">
                     <div>

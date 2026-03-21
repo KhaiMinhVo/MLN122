@@ -14,15 +14,16 @@ export default function Hero() {
     }, []);
 
     return (
-        <section id="mo-dau" className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+        <section id="mo-dau" className="relative h-screen flex items-center justify-center overflow-hidden pt-20 scroll-mt-[84px]">
             <div className="absolute inset-0 z-0">
                 <img
                     src="/tải xuống (5).jpg"
                     alt="Hero Background"
                     className="w-full h-full object-cover transition-opacity duration-300"
                     style={{
-                        transform: `translateY(${scrollY * 0.5}px)`,
-                        opacity: theme === "dark" ? 0.2 : 0.08,
+                        transform: `translateY(${Math.min(scrollY * 0.18, 56)}px) scale(1.14)`,
+                        transformOrigin: "center",
+                        opacity: theme === "dark" ? 0.34 : 0.16,
                     }}
                 />
                 <div className={`absolute inset-0 transition-colors duration-300 ${theme === "dark"

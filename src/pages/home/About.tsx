@@ -20,7 +20,7 @@ export default function About() {
     const { theme } = useTheme();
 
     return (
-        <section id="about" className={`py-20 px-4 transition-colors duration-300 ${theme === "dark" ? "bg-slate-800/50" : "bg-slate-100/50"}`}>
+        <section id="about" className={`pt-4 pb-32 px-4 scroll-mt-[84px] transition-colors duration-300 ${theme === "dark" ? "bg-slate-800/50" : "bg-slate-100/50"}`}>
             <div className="max-w-6xl mx-auto">
                 <div className="animate-fade-in-left mb-10">
                     <p className={`text-sm font-semibold uppercase tracking-[0.16em] ${theme === "dark" ? "text-cyan-300" : "text-cyan-700"}`}>

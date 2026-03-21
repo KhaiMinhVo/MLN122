@@ -3,10 +3,12 @@ import Hero from "./home/Hero";
 import About from "./home/About";
 import Revolutions from "./home/Revolutions";
 import Models from "./home/Models";
+import ModelsPart5 from "./home/ModelsPart5";
 import Vietnam from "./home/Vietnam";
 import CTA from "./home/CTA";
 import Footer from "./home/Footer";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 const sectionEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -24,7 +26,90 @@ const sectionVariants = {
   }),
 };
 
+const HOME_SECTION_IDS = ["mo-dau", "about", "revolutions", "models", "models-part5", "vietnam", "cta", "footer"];
+
 export default function Home() {
+  const isScrollingRef = useRef(false);
+  const currentSectionIndexRef = useRef(0);
+
+  useEffect(() => {
+    const sections = HOME_SECTION_IDS
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (sections.length === 0) {
+      return;
+    }
+
+    const updateCurrentIndex = () => {
+      let closestIndex = 0;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      sections.forEach((section, index) => {
+        const distance = Math.abs(section.getBoundingClientRect().top);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      currentSectionIndexRef.current = closestIndex;
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      if (window.innerWidth <= 1024) {
+        return;
+      }
+
+      if (Math.abs(event.deltaY) < 16) {
+        return;
+      }
+
+      if (isScrollingRef.current) {
+        event.preventDefault();
+        return;
+      }
+
+      updateCurrentIndex();
+
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const currentIndex = currentSectionIndexRef.current;
+      const isAtFirst = currentIndex === 0;
+      const isAtLast = currentIndex === sections.length - 1;
+
+      if ((direction < 0 && isAtFirst) || (direction > 0 && isAtLast)) {
+        return;
+      }
+
+      const nextIndex = Math.max(
+        0,
+        Math.min(sections.length - 1, currentIndex + direction),
+      );
+
+      if (nextIndex === currentIndex) {
+        return;
+      }
+
+      event.preventDefault();
+      isScrollingRef.current = true;
+      currentSectionIndexRef.current = nextIndex;
+      sections[nextIndex].scrollIntoView({ behavior: "smooth", block: "start" });
+
+      window.setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 750);
+    };
+
+    updateCurrentIndex();
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("scroll", updateCurrentIndex, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("scroll", updateCurrentIndex);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Nav />
@@ -63,7 +148,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <Vietnam />
+        <ModelsPart5 />
       </motion.div>
       <motion.div
         custom={5}
@@ -72,7 +157,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <CTA />
+        <Vietnam />
       </motion.div>
       <motion.div
         custom={6}
@@ -81,39 +166,24 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
+        <CTA />
+      </motion.div>
+      <motion.div
+        custom={7}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <Footer />
       </motion.div>
       <style>{`
-        html,
-        body,
-        #root {
-          height: 100%;
-        }
-
         html {
           scroll-behavior: smooth;
         }
 
-        body {
-          scroll-snap-type: y mandatory;
-        }
-
         section {
-          min-height: 100dvh;
-          scroll-snap-align: start;
-          scroll-snap-stop: always;
           scroll-margin-top: 84px;
-        }
-
-        @media (max-width: 1024px) {
-          body {
-            scroll-snap-type: y proximity;
-          }
-
-          section {
-            min-height: auto;
-            scroll-snap-stop: normal;
-          }
         }
 
         @keyframes fadeInUp {

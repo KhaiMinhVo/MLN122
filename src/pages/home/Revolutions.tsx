@@ -20,7 +20,7 @@ export default function Revolutions() {
     const { theme } = useTheme();
 
     return (
-        <section id="revolutions" className={`py-20 px-4 transition-colors duration-300 ${theme === "dark" ? "bg-slate-900" : "bg-white"}`}>
+        <section id="revolutions" className={`pt-4 pb-32 px-4 scroll-mt-[84px] transition-colors duration-300 ${theme === "dark" ? "bg-slate-900" : "bg-white"}`}>
             <div className="max-w-6xl mx-auto">
                 <div className="mb-10">
                     <p className={`text-sm font-semibold uppercase tracking-[0.16em] ${theme === "dark" ? "text-cyan-300" : "text-cyan-700"}`}>

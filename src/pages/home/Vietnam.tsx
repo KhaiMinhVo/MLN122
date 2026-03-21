@@ -1,11 +1,10 @@
 import { useTheme } from "../../contexts/ThemeContext";
-import { CircleCheckBig, ShieldAlert, Target } from "lucide-react";
 
 export default function Vietnam() {
     const { theme } = useTheme();
 
     return (
-        <section id="vietnam" className="py-20 px-4">
+        <section id="vietnam" className="pt-20 pb-32 px-4 scroll-mt-[84px]">
             <div className="max-w-6xl mx-auto">
                 <h2 className="py-3 text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                     Kết luận và thông điệp trọng tâm
@@ -51,38 +50,6 @@ export default function Vietnam() {
                     </div>
                 </div>
 
-                <div className={`p-12 rounded-xl border transition-all duration-300 ${theme === "dark" ? "bg-gradient-to-br from-slate-700 to-slate-800 border-slate-600" : "bg-gradient-to-br from-slate-100 to-slate-200 border-slate-300"}`}>
-                    <h3 className="text-3xl font-bold text-cyan-400 mb-8">Kết luận ngắn gọn</h3>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <div>
-                            <div className="flex items-center gap-2 mb-4">
-                                <ShieldAlert className="w-5 h-5 text-blue-400" />
-                                <h4 className="text-xl font-semibold text-blue-400">1. Vấn đề</h4>
-                            </div>
-                            <p className={`leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                Đứt gãy công nghệ làm chậm công nghiệp hóa, hiện đại hóa.
-                            </p>
-                        </div>
-                        <div>
-                            <div className="flex items-center gap-2 mb-4">
-                                <Target className="w-5 h-5 text-cyan-400" />
-                                <h4 className="text-xl font-semibold text-cyan-400">2. Mục tiêu</h4>
-                            </div>
-                            <p className={`leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                Thu hẹp khoảng cách công nghệ để phát triển bao trùm, bền vững.
-                            </p>
-                        </div>
-                        <div>
-                            <div className="flex items-center gap-2 mb-4">
-                                <CircleCheckBig className="w-5 h-5 text-cyan-400" />
-                                <h4 className="text-xl font-semibold text-cyan-400">3. Hành động</h4>
-                            </div>
-                            <p className={`leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                Đầu tư R&D, nhân lực số, hạ tầng số và công nghệ xanh.
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     );

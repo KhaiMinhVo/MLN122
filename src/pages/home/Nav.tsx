@@ -81,7 +81,15 @@ export default function Nav() {
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Phần IV - V
+                            Phần IV
+                        </motion.a>
+                        <motion.a
+                            variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
+                            href="#models-part5"
+                            className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
+                                }`}
+                        >
+                            Phần V
                         </motion.a>
                         <motion.a
                             variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
