@@ -32,7 +32,7 @@ export default function Revolutions() {
                         </p>
                     </article>
 
-                    <img src="/bg-modernization-digital.svg" alt="Minh họa đứt gãy công nghệ" className="rounded-xl w-full h-full object-cover" />
+                    <img src="/Gemini_Generated_Image_8vx0rz8vx0rz8vx0.png" alt="Minh họa đứt gãy công nghệ" className="rounded-xl w-full h-full object-cover" />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">

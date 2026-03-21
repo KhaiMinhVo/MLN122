@@ -41,28 +41,28 @@ export default function Nav() {
                             className={`transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Chương 1
+                            Phần I
                         </a>
                         <a
                             href="#revolutions"
                             className={`transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Chương 2
+                            Phần II - III
                         </a>
                         <a
                             href="#models"
                             className={`transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Chương 3
+                            Phần IV - V
                         </a>
                         <a
                             href="#vietnam"
                             className={`flex items-center gap-1 transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Kết Luận
+                            Tổng Kết
                         </a>
                     </div>
 
