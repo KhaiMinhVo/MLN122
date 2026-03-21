@@ -11,9 +11,11 @@ export default function Vietnam() {
                     Kết luận và thông điệp trọng tâm
                 </h2>
 
-                <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-                    <div>
-                        <img src="/tải xuống (4).jpg" alt="Việt Nam trong tiến trình công nghiệp hóa, hiện đại hóa" className="rounded-lg shadow-2xl hover:shadow-blue-500/50 transition-shadow duration-300" />
+                <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] gap-8 lg:gap-12 items-start lg:items-center mb-16">
+                    <div className="w-full max-w-[560px] mx-auto">
+                        <div className={`overflow-hidden rounded-xl border shadow-2xl transition-all duration-300 ${theme === "dark" ? "border-slate-700" : "border-slate-200"}`}>
+                            <img src="/tải xuống (4).jpg" alt="Việt Nam trong tiến trình công nghiệp hóa, hiện đại hóa" className="w-full aspect-[16/10] object-cover object-center hover:scale-[1.02] transition-transform duration-500" />
+                        </div>
                     </div>
                     <div>
                         <h3 className="text-3xl font-bold text-blue-400 mb-6">Thông điệp nhanh</h3>
