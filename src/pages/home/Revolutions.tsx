@@ -43,7 +43,7 @@ export default function Revolutions() {
                     {card(
                         "2",
                         "Tối ưu hóa sản xuất",
-                        "AI, Big Data và IoT giúp tối ưu hóa sản xuất, phân phối, quản trị; thúc đẩy chuyển dịch cơ cấu kinh tế theo hướng hiện đại và hiệu quả.",
+                        "Trí tuệ nhân tạo, Big Data và IoT giúp tối ưu hóa sản xuất, phân phối, quản trị; thúc đẩy chuyển dịch cơ cấu kinh tế theo hướng hiện đại và hiệu quả.",
                         "/bo-lac.jpg",
                         "bg-gradient-to-br from-cyan-500 to-blue-500"
                     )}

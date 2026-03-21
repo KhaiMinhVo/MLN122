@@ -51,7 +51,7 @@ export default function Chatbot() {
             const botId = `${id}-bot`;
             setMessages(prev => [...prev, { id: botId, from: 'bot', text: 'Đang trả lời...' }]);
             const res = await ask(text);
-            setMessages(prev => prev.map(m => m.id === botId ? { ...m, text: res ?? 'Không nhận được phản hồi từ AI.' } : m));
+            setMessages(prev => prev.map(m => m.id === botId ? { ...m, text: res ?? 'Không nhận được phản hồi từ trí tuệ nhân tạo.' } : m));
         } catch (e) {
             setMessages(prev => [...prev, { id: `err-${Date.now()}`, from: 'bot', text: 'Có lỗi khi gọi API. Vui lòng thử lại.' }]);
         }
@@ -76,11 +76,11 @@ export default function Chatbot() {
                     {showHero ? (
                         <div className="flex-1 flex items-center justify-center">
                             <div className="w-full max-w-3xl px-4">
-                                <h1 className="text-center text-3xl md:text-4xl font-medium mb-8">Ban muon hoi gi ve CNH, HDH hom nay?</h1>
+                                <h1 className="text-center text-3xl md:text-4xl font-medium mb-8">Bạn muốn hỏi gì về công nghiệp hóa, hiện đại hóa hôm nay?</h1>
                                 <div className="flex items-center bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-4 py-3 shadow-sm">
                                     <input
                                         className="flex-1 bg-transparent outline-none px-3 text-gray-700 dark:text-gray-100"
-                                        placeholder={hasApiConfig ? 'Nhap cau hoi ve noi dung bai hoc...' : 'Vui lòng cấu hình VITE_GEMINI_API_KEY để dùng chatbot.'}
+                                        placeholder={hasApiConfig ? 'Nhập câu hỏi về nội dung bài học...' : 'Vui lòng cấu hình VITE_GEMINI_API_KEY để dùng chatbot.'}
                                         value={input}
                                         onChange={e => setInput(e.target.value)}
                                         onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); send(); } }}
@@ -92,7 +92,7 @@ export default function Chatbot() {
                                         className="ml-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"
                                     >
                                         {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
-                                        Hoi
+                                        Hỏi
                                     </button>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ export default function Chatbot() {
                     ) : (
                         <div className="flex-1 relative flex flex-col">
                             <div className="px-6 pt-6">
-                                <h2 className="text-2xl font-semibold text-center">Chat hỗ trợ - CNH, HĐH và đứt gãy công nghệ</h2>
+                                <h2 className="text-2xl font-semibold text-center">Chat hỗ trợ - công nghiệp hóa, hiện đại hóa và đứt gãy công nghệ</h2>
                                 <p className="text-xs mt-1 text-gray-500 text-center">Hỏi về cơ sở lý luận, tác động công nghệ 4.0, đổi mới sáng tạo, chuyển đổi số và nguồn nhân lực chất lượng cao.</p>
                             </div>
 
@@ -135,7 +135,7 @@ export default function Chatbot() {
                                             value={input}
                                             onChange={e => setInput(e.target.value)}
                                             onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } }}
-                                            placeholder={hasApiConfig ? 'Nhap cau hoi ve chu de bai hoc...' : 'Vui lòng cấu hình VITE_GEMINI_API_KEY để dùng chatbot.'}
+                                            placeholder={hasApiConfig ? 'Nhập câu hỏi về chủ đề bài học...' : 'Vui lòng cấu hình VITE_GEMINI_API_KEY để dùng chatbot.'}
                                             className="flex-1 bg-transparent outline-none px-3 text-gray-700 dark:text-gray-100"
                                             disabled={!hasApiConfig}
                                         />

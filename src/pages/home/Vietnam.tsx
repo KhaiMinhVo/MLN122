@@ -20,7 +20,7 @@ export default function Vietnam() {
                             <div className="flex gap-4">
                                 <div className="w-1 bg-gradient-to-b from-blue-400 to-cyan-400 flex-shrink-0"></div>
                                 <div>
-                                    <h4 className="font-semibold text-blue-400 mb-1">1. Cơ sở lý luận CNH, HĐH</h4>
+                                    <h4 className="font-semibold text-blue-400 mb-1">1. Cơ sở lý luận công nghiệp hóa, hiện đại hóa</h4>
                                     <p className={theme === "dark" ? "text-slate-300" : "text-slate-700"}>
                                         Làm rõ khái niệm, bản chất và tính tất yếu khách quan của công nghiệp hóa, hiện đại hóa ở Việt Nam.
                                     </p>
@@ -40,7 +40,7 @@ export default function Vietnam() {
                                 <div>
                                     <h4 className="font-semibold text-blue-400 mb-1">3. Yêu cầu khách quan của giai đoạn mới</h4>
                                     <p className={theme === "dark" ? "text-slate-300" : "text-slate-700"}>
-                                        Gắn CNH, HĐH với đổi mới sáng tạo, chuyển đổi số và phát triển nguồn nhân lực chất lượng cao.
+                                        Gắn công nghiệp hóa, hiện đại hóa với đổi mới sáng tạo, chuyển đổi số và phát triển nguồn nhân lực chất lượng cao.
                                     </p>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ export default function Vietnam() {
                         <div>
                             <h4 className="text-xl font-semibold text-blue-400 mb-4">1. Trọng tâm</h4>
                             <p className={`leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                CNH, HĐH vẫn là nhiệm vụ tất yếu, nhưng phải dựa trên nền tảng tri thức, công nghệ và năng lực đổi mới.
+                                Công nghiệp hóa, hiện đại hóa vẫn là nhiệm vụ tất yếu, nhưng phải dựa trên nền tảng tri thức, công nghệ và năng lực đổi mới.
                             </p>
                         </div>
                         <div>

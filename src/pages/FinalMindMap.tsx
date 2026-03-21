@@ -11,10 +11,16 @@ import { useGeminiMindmap } from '../hooks/useGeminiMindmap';
 const getRelevantContent = (topic: string): string => {
   const content: Record<string, string> = {
     'cnh hđh': `Công nghiệp hóa là quá trình chuyển đổi nền sản xuất xã hội từ dựa trên lao động thủ công là chính sang nền sản xuất dựa chủ yếu trên lao động bằng máy móc.
-    
-Ở Việt Nam, CNH, HĐH là quá trình chuyển đổi căn bản, toàn diện các hoạt động kinh tế - xã hội trên nền tảng công nghệ và phương tiện hiện đại.
 
-Tính tất yếu: là quy luật phát triển lực lượng sản xuất và là con đường xây dựng cơ sở vật chất - kỹ thuật cho CNXH.`,
+  Ở Việt Nam, công nghiệp hóa, hiện đại hóa là quá trình chuyển đổi căn bản, toàn diện các hoạt động kinh tế - xã hội trên nền tảng công nghệ và phương tiện hiện đại.
+
+  Tính tất yếu: là quy luật phát triển lực lượng sản xuất và là con đường xây dựng cơ sở vật chất - kỹ thuật cho chủ nghĩa xã hội.`,
+
+    'công nghiệp hóa, hiện đại hóa': `Công nghiệp hóa là quá trình chuyển đổi nền sản xuất xã hội từ dựa trên lao động thủ công là chính sang nền sản xuất dựa chủ yếu trên lao động bằng máy móc.
+    
+Ở Việt Nam, công nghiệp hóa, hiện đại hóa là quá trình chuyển đổi căn bản, toàn diện các hoạt động kinh tế - xã hội trên nền tảng công nghệ và phương tiện hiện đại.
+
+Tính tất yếu: là quy luật phát triển lực lượng sản xuất và là con đường xây dựng cơ sở vật chất - kỹ thuật cho chủ nghĩa xã hội.`,
     
     'đứt gãy công nghệ': `Đứt gãy công nghệ là khoảng cách ngày càng lớn về khả năng tiếp cận và ứng dụng công nghệ giữa quốc gia, doanh nghiệp, vùng miền.
     
@@ -26,16 +32,16 @@ Hệ quả tiêu cực:
     'tác động tích cực công nghệ': `Tiến bộ công nghệ, đặc biệt CMCN 4.0, mở ra thời cơ lớn:
   - Cho phép đi tắt đón đầu
   - Thúc đẩy chuyển dịch cơ cấu kinh tế hiện đại
-  - Ứng dụng AI, Big Data, IoT để tối ưu sản xuất và quản trị`,
+  - Ứng dụng trí tuệ nhân tạo, Big Data, IoT để tối ưu sản xuất và quản trị`,
     
-    'đổi mới sáng tạo': `Yêu cầu khách quan hiện nay là gắn CNH, HĐH với đổi mới sáng tạo.
+    'đổi mới sáng tạo': `Yêu cầu khách quan hiện nay là gắn công nghiệp hóa, hiện đại hóa với đổi mới sáng tạo.
   - Hoàn thiện thể chế đổi mới sáng tạo quốc gia
   - Kết nối đại học, viện nghiên cứu với mạng tri thức toàn cầu
   - Nâng năng suất, chất lượng và hiệu quả tăng trưởng`,
     
     'chuyển đổi số': `Đẩy mạnh ứng dụng khoa học - công nghệ phải gắn với kinh tế tri thức.
   - Kết hợp phát triển tuần tự với đi tắt đón đầu
-  - Xây dựng hạ tầng CNTT và truyền thông
+  - Xây dựng hạ tầng công nghệ thông tin và truyền thông
   - Chuẩn bị nền tảng kinh tế số và quản trị xã hội số`,
     
     'nguồn nhân lực chất lượng cao': `Phát triển nhân lực là điều kiện tiên quyết trong thời đại mới.
@@ -44,7 +50,7 @@ Hệ quả tiêu cực:
   - Trọng dụng và thu hút nhân tài`
   };
   
-  return content[topic] || 'Nội dung về CNH, HĐH, đứt gãy công nghệ và đổi mới sáng tạo ở Việt Nam.';
+  return content[topic] || 'Nội dung về công nghiệp hóa, hiện đại hóa, đứt gãy công nghệ và đổi mới sáng tạo ở Việt Nam.';
 };
 
 export default function FinalMindMap() {
@@ -95,7 +101,7 @@ Yêu cầu:
             <div className="flex items-center gap-3">
               <Brain className="w-8 h-8 text-blue-600 dark:text-blue-400" />
               <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                MindMap CNH, HĐH va Dut Gay Cong Nghe
+                MindMap Công nghiệp hóa, hiện đại hóa và đứt gãy công nghệ
               </h1>
             </div>
             <div className="flex items-center gap-2">
@@ -108,7 +114,7 @@ Yêu cầu:
             </div>
           </div>
           <p className="text-gray-600 dark:text-gray-300">
-            Tao so do tu duy cho cac noi dung: co so ly luan CNH, HDH, tac dong cong nghe 4.0 va yeu cau doi moi sang tao
+            Tạo sơ đồ tư duy cho các nội dung: cơ sở lý luận công nghiệp hóa, hiện đại hóa, tác động công nghệ 4.0 và yêu cầu đổi mới sáng tạo
           </p>
         </div>
 
@@ -132,7 +138,7 @@ Yêu cầu:
                     Chủ đề cần tạo mindmap
                   </label>
                   <Textarea
-                    placeholder="Vi du: CNH HDH, dut gay cong nghe, tac dong cong nghe 4.0, doi moi sang tao, chuyen doi so..."
+                    placeholder="Ví dụ: công nghiệp hóa, hiện đại hóa, đứt gãy công nghệ, tác động công nghệ 4.0, đổi mới sáng tạo, chuyển đổi số..."
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     className="min-h-[100px]"
@@ -143,7 +149,7 @@ Yêu cầu:
                   <p className="text-sm font-medium">Gợi ý chủ đề:</p>
                   <div className="flex flex-wrap gap-2">
                     {[
-                      "cnh hđh",
+                      "công nghiệp hóa, hiện đại hóa",
                       "đứt gãy công nghệ",
                       "tác động tích cực công nghệ",
                       "đổi mới sáng tạo",
@@ -219,13 +225,13 @@ Yêu cầu:
                 <div>
                   <p className="font-medium">1. Nhập chủ đề:</p>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Gõ chủ đề bạn muốn tạo mindmap
+                    Gõ chủ đề bạn muốn tạo sơ đồ tư duy
                   </p>
                 </div>
                 <div>
                   <p className="font-medium">2. Tạo MindMap:</p>
                   <p className="text-gray-600 dark:text-gray-400">
-                    AI sẽ phân tích và tạo sơ đồ tư duy
+                    Trí tuệ nhân tạo sẽ phân tích và tạo sơ đồ tư duy
                   </p>
                 </div>
                 <div>
@@ -236,7 +242,7 @@ Yêu cầu:
                 </div>
                 <div className="pt-2 border-t">
                   <p className="font-medium text-blue-600 dark:text-blue-400">
-                    💡 Dua tren noi dung moi trong file NoiDung.md
+                    💡 Dựa trên nội dung mới trong file NoiDung.md
                   </p>
                 </div>
               </CardContent>

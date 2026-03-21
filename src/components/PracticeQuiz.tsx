@@ -178,7 +178,7 @@ export default function PracticeQuiz({ onImportQuestion }: { onImportQuestion?: 
                     </h1>
 
                     <p className={`${textMuted} text-center mb-6 leading-relaxed`}>
-                        Luyện tập với 10 câu hỏi được AI sinh ra tương tự như những câu hỏi mẫu. Tổng thời gian là 10 phút.
+                        Luyện tập với 10 câu hỏi được trí tuệ nhân tạo sinh ra tương tự như những câu hỏi mẫu. Tổng thời gian là 10 phút.
                     </p>
 
                     <div className={`space-y-3 mb-8 p-4 rounded-lg ${theme === 'dark' ? 'bg-slate-700/30' : 'bg-blue-50/50'}`}>
@@ -231,7 +231,7 @@ export default function PracticeQuiz({ onImportQuestion }: { onImportQuestion?: 
                     className={`${cardBg} backdrop-blur-xl border rounded-2xl p-8 max-w-md w-full shadow-2xl text-center`}
                 >
                     <div className="text-6xl mb-4 animate-spin inline-block">⚡</div>
-                    <p className={`${textColor} font-semibold`}>Đang tạo câu hỏi từ AI...</p>
+                    <p className={`${textColor} font-semibold`}>Đang tạo câu hỏi từ trí tuệ nhân tạo...</p>
                 </motion.div>
             </div>
         );

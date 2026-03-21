@@ -14,7 +14,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+        <section id="mo-dau" className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
             <div className="absolute inset-0 z-0">
                 <img
                     src="/ShPb8BD9Fw7G.jpg"
@@ -40,7 +40,7 @@ export default function Hero() {
 
             <div className="relative z-10 text-center max-w-4xl mx-auto px-4 animate-fade-in">
                 <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">CNH, HĐH Trong </span>
+                    <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Công Nghiệp Hóa, Hiện Đại Hóa Trong </span>
                     <br />
                     <span className={theme === "dark" ? "text-white" : "text-slate-800"}>
                         Thời Đại Đứt Gãy Công Nghệ

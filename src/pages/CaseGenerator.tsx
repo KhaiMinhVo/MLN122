@@ -247,12 +247,12 @@ export default function CaseGenerator() {
                 {isGenerating ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    AI đang tạo ví dụ...
+                    Trí tuệ nhân tạo đang tạo ví dụ...
                   </>
                 ) : (
                   <>
                     <Sparkles className="mr-2 h-4 w-4" />
-                    Tạo ví dụ với AI
+                    Tạo ví dụ với trí tuệ nhân tạo
                   </>
                 )}
               </Button>

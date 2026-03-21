@@ -68,19 +68,19 @@ export default function Login() {
               </span>
               <br />
               <span className="text-white">
-                với AI
+                với trí tuệ nhân tạo
               </span>
             </h1>
             
             <p className="text-lg text-gray-300 leading-relaxed">
-              Nền tảng học tập hiện đại với công nghệ AI, Mind Map tương tác và bài tập thực hành thông minh.
+              Nền tảng học tập hiện đại với công nghệ trí tuệ nhân tạo, Mind Map tương tác và bài tập thực hành thông minh.
             </p>
           </div>
 
           {/* Features */}
           <div className="space-y-4 pt-4">
             {[
-              { icon: Sparkles, text: "Mind Map tự động bằng AI" },
+              { icon: Sparkles, text: "Mind Map tự động bằng trí tuệ nhân tạo" },
               { icon: Shield, text: "Bảo mật thông tin tuyệt đối" },
               { icon: Zap, text: "Học tập nhanh và hiệu quả" },
             ].map((feature, i) => (

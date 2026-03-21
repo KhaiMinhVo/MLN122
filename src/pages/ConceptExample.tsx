@@ -72,9 +72,9 @@ async function callGeminiAPI(apiKey: string, prompt: string) {
 // Đọc nội dung từ file NoiDung.md
 const getConceptContent = (concept: string): string => {
   const content: Record<string, string> = {
-  'cnh hđh': `## CNH, HĐH
+  'cnh hđh': `## Công nghiệp hóa, hiện đại hóa
 
-Công nghiệp hóa là quá trình chuyển từ lao động thủ công sang sản xuất bằng máy móc, nhằm nâng cao năng suất lao động xã hội. Ở Việt Nam, CNH, HĐH là quá trình chuyển đổi toàn diện sản xuất, dịch vụ và quản lý kinh tế - xã hội trên nền tảng công nghệ hiện đại.
+Công nghiệp hóa là quá trình chuyển từ lao động thủ công sang sản xuất bằng máy móc, nhằm nâng cao năng suất lao động xã hội. Ở Việt Nam, công nghiệp hóa, hiện đại hóa là quá trình chuyển đổi toàn diện sản xuất, dịch vụ và quản lý kinh tế - xã hội trên nền tảng công nghệ hiện đại.
 
 Đặc điểm chính:
 - Quy luật phát triển tất yếu
@@ -92,7 +92,7 @@ Công nghiệp hóa là quá trình chuyển từ lao động thủ công sang s
 
   'đổi mới sáng tạo': `## Đổi mới sáng tạo
 
-Đổi mới sáng tạo là yêu cầu khách quan để CNH, HĐH thành công trong bối cảnh công nghệ biến đổi nhanh. Trọng tâm là hoàn thiện thể chế, liên kết tri thức và nâng năng suất nền kinh tế.
+Đổi mới sáng tạo là yêu cầu khách quan để công nghiệp hóa, hiện đại hóa thành công trong bối cảnh công nghệ biến đổi nhanh. Trọng tâm là hoàn thiện thể chế, liên kết tri thức và nâng năng suất nền kinh tế.
 
 Đặc điểm chính:
 - Hoàn thiện hệ sinh thái sáng tạo
@@ -104,13 +104,13 @@ Công nghiệp hóa là quá trình chuyển từ lao động thủ công sang s
 Chuyển đổi số là quá trình ứng dụng công nghệ số vào sản xuất, quản trị, phân phối và dịch vụ nhằm nâng cao hiệu quả vận hành của nền kinh tế và xã hội.
 
 Đặc điểm chính:
-- Phát triển hạ tầng CNTT-TT
+- Phát triển hạ tầng công nghệ thông tin và truyền thông
 - Tạo nền tảng kinh tế số
 - Nâng cao năng lực quản trị xã hội`,
 
   'nguồn nhân lực chất lượng cao': `## Nguồn nhân lực chất lượng cao
 
-Nguồn nhân lực chất lượng cao là điều kiện then chốt để thích ứng công nghệ mới và duy trì tốc độ tăng trưởng trong quá trình CNH, HĐH.
+Nguồn nhân lực chất lượng cao là điều kiện then chốt để thích ứng công nghệ mới và duy trì tốc độ tăng trưởng trong quá trình công nghiệp hóa, hiện đại hóa.
 
 Đặc điểm chính:
 - Đổi mới giáo dục theo năng lực
@@ -147,7 +147,7 @@ export default function ConceptExample() {
   const [error, setError] = useState<string | null>(null);
 
   const concepts = [
-    { value: 'cnh hđh', label: 'CNH, HĐH' },
+    { value: 'cnh hđh', label: 'Công nghiệp hóa, hiện đại hóa' },
     { value: 'đứt gãy công nghệ', label: 'Đứt Gãy Công Nghệ' },
     { value: 'đổi mới sáng tạo', label: 'Đổi Mới Sáng Tạo' },
     { value: 'chuyển đổi số', label: 'Chuyển Đổi Số' },
@@ -201,7 +201,7 @@ export default function ConceptExample() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-2">Tạo Ví Dụ Khái Niệm</h1>
         <p className="text-muted-foreground text-center mb-8">
-          Chọn một khái niệm trong chủ đề CNH, HĐH và đứt gãy công nghệ để tạo ví dụ minh họa
+          Chọn một khái niệm trong chủ đề công nghiệp hóa, hiện đại hóa và đứt gãy công nghệ để tạo ví dụ minh họa
         </p>
 
         <Card className="mb-8">
@@ -247,12 +247,12 @@ export default function ConceptExample() {
                 {isGenerating ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    AI đang tạo ví dụ...
+                    Trí tuệ nhân tạo đang tạo ví dụ...
                   </>
                 ) : (
                   <>
                     <Sparkles className="mr-2 h-4 w-4" />
-                    Tạo ví dụ với AI
+                    Tạo ví dụ với trí tuệ nhân tạo
                   </>
                 )}
               </Button>

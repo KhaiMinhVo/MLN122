@@ -95,7 +95,7 @@ export default function MindMap() {
                                 value={prompt}
                                 onChange={(e) => setPrompt(e.target.value)}
                                 onKeyDown={handleKeyDown}
-                                placeholder="Ví dụ: Phân tích tác động của đứt gãy công nghệ đến CNH, HĐH ở Việt Nam..."
+                                placeholder="Ví dụ: Phân tích tác động của đứt gãy công nghệ đến công nghiệp hóa, hiện đại hóa ở Việt Nam..."
                                 disabled={!hasApiConfig || loading}
                                 className={`w-full h-32 p-4 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all ${theme === 'dark'
                                     ? 'bg-slate-700/50 border-slate-600 text-white placeholder-gray-400'
@@ -150,7 +150,7 @@ export default function MindMap() {
                         ? 'bg-blue-900/20 border-blue-700/30 text-blue-200'
                         : 'bg-blue-100/30 border-blue-300/30 text-blue-800'
                         } text-xs`}>
-                        <strong>Mẹo:</strong> Nhập trọng tâm cụ thể để có mindmap tốt hơn, ví dụ: cơ sở lý luận CNH-HĐH, tác động công nghệ 4.0, đổi mới sáng tạo, chuyển đổi số, nhân lực chất lượng cao.
+                        <strong>Mẹo:</strong> Nhập trọng tâm cụ thể để có mindmap tốt hơn, ví dụ: cơ sở lý luận công nghiệp hóa - hiện đại hóa, tác động công nghệ 4.0, đổi mới sáng tạo, chuyển đổi số, nhân lực chất lượng cao.
                     </div>
 
                     {/* Divider */}
