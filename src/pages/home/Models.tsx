@@ -35,10 +35,11 @@ export default function Models() {
                     <motion.div
                         className="grid md:grid-cols-3 gap-6"
                         initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.2 }}
+                        animate="visible"
                         variants={{
+                            hidden: { opacity: 0 },
                             visible: {
+                                opacity: 1,
                                 transition: {
                                     staggerChildren: 0.12,
                                 },
@@ -74,10 +75,11 @@ export default function Models() {
                     <motion.div
                         className="grid md:grid-cols-2 gap-6"
                         initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.2 }}
+                        animate="visible"
                         variants={{
+                            hidden: { opacity: 0 },
                             visible: {
+                                opacity: 1,
                                 transition: {
                                     staggerChildren: 0.12,
                                 },
