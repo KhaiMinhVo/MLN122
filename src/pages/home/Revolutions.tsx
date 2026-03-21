@@ -36,7 +36,7 @@ export default function Revolutions() {
                         "1",
                         "Cơ hội đi tắt đón đầu",
 "Công nghệ 4.0 mở cơ hội để các nước đi sau tiếp cận nhanh thành tựu mới, rút ngắn khoảng cách phát triển nếu có chiến lược phù hợp.",
-                        "/thitoc2.jpg",
+                        "/bg-modernization-digital.svg",
                         "bg-gradient-to-br from-blue-500 to-cyan-500"
                     )}
 
@@ -44,7 +44,7 @@ export default function Revolutions() {
                         "2",
                         "Tối ưu hóa sản xuất",
                         "Trí tuệ nhân tạo, Big Data và IoT giúp tối ưu hóa sản xuất, phân phối, quản trị; thúc đẩy chuyển dịch cơ cấu kinh tế theo hướng hiện đại và hiệu quả.",
-                        "/bo-lac.jpg",
+                        "/bg-tech-industrial.svg",
                         "bg-gradient-to-br from-cyan-500 to-blue-500"
                     )}
 
@@ -52,7 +52,7 @@ export default function Revolutions() {
                         "3",
                         "Đứt gãy lợi thế truyền thống",
                         "Nhân công rẻ và khai thác tài nguyên không còn là lợi thế bền vững. Nhiều ngành cũ tụt hậu nếu không kịp chuyển đổi công nghệ.",
-                        "/bo-toc.jpg",
+                        "/bg-modernization-factory.svg",
                         "bg-gradient-to-br from-blue-500 to-cyan-500"
                     )}
 
@@ -60,7 +60,7 @@ export default function Revolutions() {
                         "4",
                         "Rủi ro bất bình đẳng",
                         "Tự động hóa có thể gây mất việc, giảm thu nhập ở một số nhóm lao động và làm gia tăng phân hóa xã hội nếu thiếu chính sách chuyển đổi phù hợp.",
-                        "/dantoc2.jpg",
+                        "/bg-modernization-city.svg",
                         "bg-gradient-to-br from-cyan-500 to-blue-500"
                     )}
                 </div>

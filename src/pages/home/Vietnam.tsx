@@ -12,7 +12,7 @@ export default function Vietnam() {
 
                 <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
                     <div>
-                        <img src="/giaicap5.jpg" alt="Vietnam Industry" className="rounded-lg shadow-2xl hover:shadow-blue-500/50 transition-shadow duration-300" />
+                        <img src="/bg-modernization-city.svg" alt="Việt Nam trong tiến trình công nghiệp hóa, hiện đại hóa" className="rounded-lg shadow-2xl hover:shadow-blue-500/50 transition-shadow duration-300" />
                     </div>
                     <div>
                         <h3 className="text-3xl font-bold text-blue-400 mb-6">Tóm tắt nội dung</h3>
