@@ -3,10 +3,14 @@ import { useTheme } from "../../contexts/ThemeContext";
 import { motion, easeInOut } from "framer-motion";
 
 const cardVariants = {
-    hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+    hidden: (index: number) => ({
+        opacity: 0,
+        x: index % 2 === 0 ? -72 : 72,
+        filter: "blur(8px)",
+    }),
     visible: (index: number) => ({
         opacity: 1,
-        y: 0,
+        x: 0,
         filter: "blur(0px)",
         transition: {
             duration: 0.6,
@@ -35,7 +39,7 @@ export default function ModelsPart5() {
                     className="grid md:grid-cols-2 gap-4"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: false, amount: 0.2 }}
                     variants={{
                         hidden: { opacity: 0 },
                         visible: {

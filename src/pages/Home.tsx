@@ -13,7 +13,11 @@ import { useEffect, useRef } from "react";
 const sectionEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const sectionVariants = {
-  hidden: { opacity: 0, y: 36, filter: "blur(6px)" },
+  hidden: () => ({
+    opacity: 0,
+    y: 24,
+    filter: "blur(4px)",
+  }),
   visible: (index: number) => ({
     opacity: 1,
     y: 0,
@@ -114,21 +118,13 @@ export default function Home() {
     <div className="min-h-screen overflow-x-hidden">
       <Nav />
       <Hero />
-      <motion.div
-        custom={1}
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <About />
-      </motion.div>
+      <About />
       <motion.div
         custom={2}
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
       >
         <Revolutions />
       </motion.div>
@@ -137,7 +133,7 @@ export default function Home() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
       >
         <Models />
       </motion.div>
@@ -146,7 +142,7 @@ export default function Home() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
       >
         <ModelsPart5 />
       </motion.div>
@@ -155,7 +151,7 @@ export default function Home() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
       >
         <Vietnam />
       </motion.div>
@@ -164,7 +160,7 @@ export default function Home() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
       >
         <CTA />
       </motion.div>
@@ -173,7 +169,7 @@ export default function Home() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
       >
         <Footer />
       </motion.div>
