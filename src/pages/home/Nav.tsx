@@ -11,8 +11,18 @@ export default function Nav() {
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                    Công nghiệp hóa, hiện đại hóa và đổi mới sáng tạo
+                <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 text-white font-extrabold text-sm flex items-center justify-center shadow-lg">
+                        KT
+                    </div>
+                    <div className="leading-tight">
+                        <p className="text-base md:text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                            Kinh tế chính trị
+                        </p>
+                        <p className={`hidden sm:block text-xs ${theme === "dark" ? "text-slate-300" : "text-slate-600"}`}>
+                            Công nghiệp hóa, hiện đại hóa và đổi mới sáng tạo
+                        </p>
+                    </div>
                 </div>
                 <div className="flex items-center gap-4 md:gap-8">
                     <div className="hidden md:flex gap-6">
