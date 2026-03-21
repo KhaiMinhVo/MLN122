@@ -1,4 +1,4 @@
-import { PersonStanding , TrendingUp, Globe } from "lucide-react";
+import { BookOpenCheck, Leaf, PersonStanding, TrendingUp, Globe, Wrench } from "lucide-react";
 import { useTheme } from "../../contexts/ThemeContext";
 
 export default function Models() {
@@ -23,21 +23,21 @@ export default function Models() {
                             <TrendingUp className="w-10 h-10 text-cyan-400 mb-3" />
                             <h4 className="text-lg font-bold mb-2">Làm chậm tiến trình</h4>
                             <p className={`text-sm leading-relaxed ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                Không làm chủ công nghệ dẫn đến phụ thuộc và năng suất thấp, làm suy giảm khả năng cạnh tranh.
+                                Không làm chủ công nghệ → phụ thuộc, năng suất thấp, giảm cạnh tranh.
                             </p>
                         </article>
                         <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-slate-100 border-slate-200"}`}>
                             <Globe className="w-10 h-10 text-cyan-400 mb-3" />
                             <h4 className="text-lg font-bold mb-2">Méo mó cấu trúc phát triển</h4>
                             <p className={`text-sm leading-relaxed ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                Thành thị phát triển nhanh hơn nông thôn, gây mất cân đối kinh tế - xã hội giữa các vùng.
+                                Thành thị nhanh, nông thôn chậm → mất cân đối kinh tế - xã hội.
                             </p>
                         </article>
                         <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-slate-100 border-slate-200"}`}>
                             <PersonStanding className="w-10 h-10 text-cyan-400 mb-3" />
                             <h4 className="text-lg font-bold mb-2">Cản trở mục tiêu xã hội chủ nghĩa</h4>
                             <p className={`text-sm leading-relaxed ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                Đứt gãy công nghệ làm gia tăng khoảng cách giàu nghèo, gây bất ổn và giảm tính bao trùm của phát triển.
+                                Tăng khoảng cách giàu nghèo, giảm tính bao trùm, tiềm ẩn bất ổn xã hội.
                             </p>
                         </article>
                     </div>
@@ -47,7 +47,10 @@ export default function Models() {
                     <h3 className="text-2xl font-bold text-cyan-400 mb-5">V. Yêu cầu khách quan (kết luận trọng tâm)</h3>
                     <div className="grid md:grid-cols-2 gap-6">
                         <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-                            <h4 className="font-bold text-blue-400 mb-2">1. Gắn công nghiệp hóa với đổi mới sáng tạo</h4>
+                            <div className="flex items-center gap-2 mb-2">
+                                <BookOpenCheck className="w-5 h-5 text-blue-400" />
+                                <h4 className="font-bold text-blue-400">1. Gắn CNH với đổi mới sáng tạo</h4>
+                            </div>
                             <ul className={`space-y-1 text-sm ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
                                 <li>Phát triển hệ sinh thái startup.</li>
                                 <li>Tăng đầu tư cho R&D.</li>
@@ -55,7 +58,10 @@ export default function Models() {
                             </ul>
                         </article>
                         <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-                            <h4 className="font-bold text-blue-400 mb-2">2. Thu hẹp khoảng cách công nghệ</h4>
+                            <div className="flex items-center gap-2 mb-2">
+                                <Wrench className="w-5 h-5 text-blue-400" />
+                                <h4 className="font-bold text-blue-400">2. Thu hẹp khoảng cách công nghệ</h4>
+                            </div>
                             <ul className={`space-y-1 text-sm ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
                                 <li>Hỗ trợ doanh nghiệp nhỏ và vừa.</li>
                                 <li>Phát triển hạ tầng số nông thôn.</li>
@@ -63,7 +69,10 @@ export default function Models() {
                             </ul>
                         </article>
                         <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-                            <h4 className="font-bold text-cyan-400 mb-2">3. Phát triển nguồn nhân lực</h4>
+                            <div className="flex items-center gap-2 mb-2">
+                                <PersonStanding className="w-5 h-5 text-cyan-400" />
+                                <h4 className="font-bold text-cyan-400">3. Phát triển nguồn nhân lực</h4>
+                            </div>
                             <ul className={`space-y-1 text-sm ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
                                 <li>Đẩy mạnh giáo dục STEM.</li>
                                 <li>Đào tạo lại lực lượng lao động.</li>
@@ -71,7 +80,10 @@ export default function Models() {
                             </ul>
                         </article>
                         <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-                            <h4 className="font-bold text-cyan-400 mb-2">4. Gắn với phát triển bền vững</h4>
+                            <div className="flex items-center gap-2 mb-2">
+                                <Leaf className="w-5 h-5 text-cyan-400" />
+                                <h4 className="font-bold text-cyan-400">4. Gắn với phát triển bền vững</h4>
+                            </div>
                             <ul className={`space-y-1 text-sm ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
                                 <li>Ưu tiên công nghệ xanh.</li>
                                 <li>Thúc đẩy kinh tế tuần hoàn.</li>

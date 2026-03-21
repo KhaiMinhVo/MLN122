@@ -1,4 +1,5 @@
 import { useTheme } from "../../contexts/ThemeContext";
+import { CircleCheckBig, ShieldAlert, Target } from "lucide-react";
 
 export default function Vietnam() {
     const { theme } = useTheme();
@@ -15,23 +16,23 @@ export default function Vietnam() {
                         <img src="/bg-modernization-city.svg" alt="Việt Nam trong tiến trình công nghiệp hóa, hiện đại hóa" className="rounded-lg shadow-2xl hover:shadow-blue-500/50 transition-shadow duration-300" />
                     </div>
                     <div>
-                        <h3 className="text-3xl font-bold text-blue-400 mb-6">Thông điệp kết luận</h3>
+                        <h3 className="text-3xl font-bold text-blue-400 mb-6">Thông điệp nhanh</h3>
                         <div className="space-y-4">
                             <div className="flex gap-4">
                                 <div className="w-1 bg-gradient-to-b from-blue-400 to-cyan-400 flex-shrink-0"></div>
                                 <div>
-                                    <h4 className="font-semibold text-blue-400 mb-1">1. Đứt gãy công nghệ là thách thức cấu trúc</h4>
+                                    <h4 className="font-semibold text-blue-400 mb-1">1. Đứt gãy công nghệ là thách thức lớn</h4>
                                     <p className={theme === "dark" ? "text-slate-300" : "text-slate-700"}>
-                                        Không chỉ là vấn đề kỹ thuật mà còn tác động trực tiếp tới năng suất, việc làm, công bằng và ổn định xã hội.
+                                        Tác động trực tiếp đến năng suất, việc làm và công bằng xã hội.
                                     </p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
                                 <div className="w-1 bg-gradient-to-b from-cyan-400 to-blue-400 flex-shrink-0"></div>
                                 <div>
-                                    <h4 className="font-semibold text-cyan-400 mb-1">2. Công nghệ vừa là cơ hội vừa là phép thử</h4>
+                                    <h4 className="font-semibold text-cyan-400 mb-1">2. Công nghệ là cơ hội và phép thử</h4>
                                     <p className={theme === "dark" ? "text-slate-300" : "text-slate-700"}>
-                                        Quốc gia nào làm chủ công nghệ và nguồn nhân lực sẽ nắm lợi thế trong chuỗi giá trị mới.
+                                        Làm chủ công nghệ và nhân lực sẽ nắm lợi thế chuỗi giá trị.
                                     </p>
                                 </div>
                             </div>
@@ -40,16 +41,7 @@ export default function Vietnam() {
                                 <div>
                                     <h4 className="font-semibold text-blue-400 mb-1">3. Trọng tâm chiến lược của Việt Nam</h4>
                                     <p className={theme === "dark" ? "text-slate-300" : "text-slate-700"}>
-                                        Gắn công nghiệp hóa với đổi mới sáng tạo, chuyển đổi số, phát triển nhân lực và công nghệ xanh.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <div className="w-1 bg-gradient-to-b from-cyan-400 to-blue-400 flex-shrink-0"></div>
-                                <div>
-                                    <h4 className="font-semibold text-cyan-400 mb-1">4. Mục tiêu phát triển bền vững</h4>
-                                    <p className={theme === "dark" ? "text-slate-300" : "text-slate-700"}>
-                                        Thu hẹp khoảng cách công nghệ để đạt tăng trưởng nhanh, bao trùm, bền vững theo định hướng xã hội chủ nghĩa.
+                                        Gắn công nghiệp hóa với đổi mới sáng tạo, chuyển đổi số và công nghệ xanh.
                                     </p>
                                 </div>
                             </div>
@@ -59,17 +51,32 @@ export default function Vietnam() {
 
                 <div className={`p-12 rounded-xl border transition-all duration-300 ${theme === "dark" ? "bg-gradient-to-br from-slate-700 to-slate-800 border-slate-600" : "bg-gradient-to-br from-slate-100 to-slate-200 border-slate-300"}`}>
                     <h3 className="text-3xl font-bold text-cyan-400 mb-8">Kết luận ngắn gọn</h3>
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-3 gap-6">
                         <div>
-                            <h4 className="text-xl font-semibold text-blue-400 mb-4">1. Trọng tâm</h4>
+                            <div className="flex items-center gap-2 mb-4">
+                                <ShieldAlert className="w-5 h-5 text-blue-400" />
+                                <h4 className="text-xl font-semibold text-blue-400">1. Vấn đề</h4>
+                            </div>
                             <p className={`leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                Công nghiệp hóa, hiện đại hóa vẫn là nhiệm vụ tất yếu, nhưng phải đặt trên nền tảng tri thức, công nghệ và đổi mới sáng tạo.
+                                Đứt gãy công nghệ làm chậm công nghiệp hóa, hiện đại hóa.
                             </p>
                         </div>
                         <div>
-                            <h4 className="text-xl font-semibold text-cyan-400 mb-4">2. Thực hiện</h4>
+                            <div className="flex items-center gap-2 mb-4">
+                                <Target className="w-5 h-5 text-cyan-400" />
+                                <h4 className="text-xl font-semibold text-cyan-400">2. Mục tiêu</h4>
+                            </div>
                             <p className={`leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
-                                Cần đồng thời phát triển thể chế, hạ tầng số, năng lực R&D và nhân lực chất lượng cao để vượt bẫy giá trị thấp.
+                                Thu hẹp khoảng cách công nghệ để phát triển bao trùm, bền vững.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex items-center gap-2 mb-4">
+                                <CircleCheckBig className="w-5 h-5 text-cyan-400" />
+                                <h4 className="text-xl font-semibold text-cyan-400">3. Hành động</h4>
+                            </div>
+                            <p className={`leading-relaxed transition-colors duration-300 ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
+                                Đầu tư R&D, nhân lực số, hạ tầng số và công nghệ xanh.
                             </p>
                         </div>
                     </div>
