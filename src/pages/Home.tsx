@@ -8,6 +8,8 @@ import CTA from "./home/CTA";
 import Footer from "./home/Footer";
 import { motion } from "framer-motion";
 
+const sectionEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
 const sectionVariants = {
   hidden: { opacity: 0, y: 36, filter: "blur(6px)" },
   visible: (index: number) => ({
@@ -17,7 +19,7 @@ const sectionVariants = {
     transition: {
       duration: 0.65,
       delay: index * 0.08,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   }),
 };
