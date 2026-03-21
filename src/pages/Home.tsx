@@ -7,28 +7,7 @@ import ModelsPart5 from "./home/ModelsPart5";
 import Vietnam from "./home/Vietnam";
 import CTA from "./home/CTA";
 import Footer from "./home/Footer";
-import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-
-const sectionEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
-const sectionVariants = {
-  hidden: () => ({
-    opacity: 0,
-    y: 24,
-    filter: "blur(4px)",
-  }),
-  visible: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.65,
-      delay: index * 0.08,
-      ease: sectionEase,
-    },
-  }),
-};
 
 const HOME_SECTION_IDS = ["mo-dau", "about", "revolutions", "models", "models-part5", "vietnam", "cta", "footer"];
 
@@ -119,60 +98,12 @@ export default function Home() {
       <Nav />
       <Hero />
       <About />
-      <motion.div
-        custom={2}
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
-      >
-        <Revolutions />
-      </motion.div>
-      <motion.div
-        custom={3}
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
-      >
-        <Models />
-      </motion.div>
-      <motion.div
-        custom={4}
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
-      >
-        <ModelsPart5 />
-      </motion.div>
-      <motion.div
-        custom={5}
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
-      >
-        <Vietnam />
-      </motion.div>
-      <motion.div
-        custom={6}
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
-      >
-        <CTA />
-      </motion.div>
-      <motion.div
-        custom={7}
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.28, margin: "-12% 0px -12% 0px" }}
-      >
-        <Footer />
-      </motion.div>
+      <Revolutions />
+      <Models />
+      <ModelsPart5 />
+      <Vietnam />
+      <CTA />
+      <Footer />
       <style>{`
         html {
           scroll-behavior: smooth;
