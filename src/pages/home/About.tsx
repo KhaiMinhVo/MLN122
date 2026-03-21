@@ -1,5 +1,19 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import { Cpu, Factory, Lightbulb, Microscope } from "lucide-react";
+import { motion, easeInOut } from "framer-motion";
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 32 },
+    visible: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            delay: index * 0.12,
+            ease: easeInOut,
+        },
+    }),
+};
 
 export default function About() {
     const { theme } = useTheme();
@@ -16,8 +30,20 @@ export default function About() {
                     </h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-5">
-                    <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+                <motion.div
+                    className="grid md:grid-cols-2 gap-5"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.12,
+                            },
+                        },
+                    }}
+                >
+                    <motion.article custom={0} variants={cardVariants} className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
                         <div className="flex items-center gap-2 mb-3">
                             <Factory className="w-5 h-5 text-blue-400" />
                             <h3 className="text-lg font-bold text-blue-400">1. Khái niệm CNH - HĐH</h3>
@@ -27,9 +53,9 @@ export default function About() {
                             <li>• Hiện đại hóa: ứng dụng công nghệ để tăng năng suất, chất lượng.</li>
                             <li>• Bản chất: phát triển lực lượng sản xuất, gắn khoa học - công nghệ.</li>
                         </ul>
-                    </article>
+                    </motion.article>
 
-                    <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+                    <motion.article custom={1} variants={cardVariants} className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
                         <div className="flex items-center gap-2 mb-3">
                             <Cpu className="w-5 h-5 text-cyan-400" />
                             <h3 className="text-lg font-bold text-cyan-400">2. Vai trò công nghệ theo Mác</h3>
@@ -39,9 +65,9 @@ export default function About() {
                             <li>• Công nghệ giữ vai trò ngày càng quyết định.</li>
                             <li>• Ai nắm công nghệ → chi phối sản xuất và phát triển.</li>
                         </ul>
-                    </article>
+                    </motion.article>
 
-                    <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+                    <motion.article custom={2} variants={cardVariants} className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
                         <div className="flex items-center gap-2 mb-3">
                             <Lightbulb className="w-5 h-5 text-blue-400" />
                             <h3 className="text-lg font-bold text-blue-400">3. Định hướng tại Việt Nam</h3>
@@ -51,9 +77,9 @@ export default function About() {
                             <li>• Kết hợp tăng trưởng, công bằng xã hội, bền vững.</li>
                             <li>• Điểm mới: CNH dựa trên tri thức, công nghệ, đổi mới sáng tạo.</li>
                         </ul>
-                    </article>
+                    </motion.article>
 
-                    <article className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+                    <motion.article custom={3} variants={cardVariants} className={`rounded-xl border p-5 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
                         <div className="flex items-center gap-2 mb-3">
                             <Microscope className="w-5 h-5 text-cyan-400" />
                             <h3 className="text-lg font-bold text-cyan-400">4. Case FPT</h3>
@@ -63,8 +89,8 @@ export default function About() {
                             <li>• Cho thấy CNH thời đại mới dựa vào tri thức số, không chỉ nhà máy nặng.</li>
                             <li>• Thách thức: cần vượt bẫy giá trị thấp từ gia công.</li>
                         </ul>
-                    </article>
-                </div>
+                    </motion.article>
+                </motion.div>
             </div>
         </section>
     );

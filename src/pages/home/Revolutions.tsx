@@ -1,5 +1,19 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import { AlertTriangle, CircleSlash, Sparkles } from "lucide-react";
+import { motion, easeInOut } from "framer-motion";
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 32 },
+    visible: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            delay: index * 0.12,
+            ease: easeInOut,
+        },
+    }),
+};
 
 export default function Revolutions() {
     const { theme } = useTheme();
@@ -35,8 +49,24 @@ export default function Revolutions() {
                     <img src="/Gemini_Generated_Image_8vx0rz8vx0rz8vx0.png" alt="Minh họa đứt gãy công nghệ" className="rounded-xl w-full h-full object-cover" />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                    <article className={`rounded-xl border p-6 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+                <motion.div
+                    className="grid md:grid-cols-2 gap-8"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.12,
+                            },
+                        },
+                    }}
+                >
+                    <motion.article
+                        custom={0}
+                        variants={cardVariants}
+                        className={`rounded-xl border p-6 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}
+                    >
                         <div className="flex items-center gap-2 mb-4">
                             <Sparkles className="w-5 h-5 text-blue-400" />
                             <h3 className="text-2xl font-bold text-blue-400">III.1 Mặt tích cực</h3>
@@ -46,9 +76,13 @@ export default function Revolutions() {
                             <li>• Tạo ngành mới: kinh tế số, fintech, logistics thông minh.</li>
                             <li>• Rút ngắn CNH theo hướng đi tắt đón đầu.</li>
                         </ul>
-                    </article>
+                    </motion.article>
 
-                    <article className={`rounded-xl border p-6 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+                    <motion.article
+                        custom={1}
+                        variants={cardVariants}
+                        className={`rounded-xl border p-6 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}
+                    >
                         <div className="flex items-center gap-2 mb-4">
                             <CircleSlash className="w-5 h-5 text-cyan-400" />
                             <h3 className="text-2xl font-bold text-cyan-400">III.2 Mặt tiêu cực</h3>
@@ -59,8 +93,8 @@ export default function Revolutions() {
                             <li>• Đứt gãy chuỗi giá trị: chủ yếu gia công, lắp ráp, ít R&D.</li>
                             <li>• Case FPT: đúng hướng tri thức số nhưng còn áp lực tăng giá trị gia tăng.</li>
                         </ul>
-                    </article>
-                </div>
+                    </motion.article>
+                </motion.div>
             </div>
         </section>
     );
