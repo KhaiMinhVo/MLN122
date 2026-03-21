@@ -12,12 +12,15 @@ export default function Nav() {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
                 <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 text-white font-extrabold text-sm flex items-center justify-center shadow-lg">
-                        KT
+                    <div className="relative h-11 w-11 shrink-0">
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-300/70 to-blue-500/80 blur-[1px]" />
+                        <div className="absolute inset-[1.5px] rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 text-white font-black text-[11px] tracking-wide flex items-center justify-center shadow-[0_6px_20px_rgba(34,211,238,0.35)]">
+                            MLN
+                        </div>
                     </div>
                     <div className="leading-tight">
-                        <p className="text-base md:text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                            Kinh tế chính trị
+                        <p className="text-base md:text-lg font-extrabold tracking-tight bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-200 bg-clip-text text-transparent">
+                            Kinh tế chính trị Mác - Lênin
                         </p>
                         <p className={`hidden sm:block text-xs ${theme === "dark" ? "text-slate-300" : "text-slate-600"}`}>
                             Công nghiệp hóa, hiện đại hóa và đổi mới sáng tạo

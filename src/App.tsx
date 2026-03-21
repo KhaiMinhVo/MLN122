@@ -6,7 +6,6 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { QAProvider } from "./contexts/QAContext";
-import VisitorCounter from "./components/VisitorCounter";
 import Home from "./pages/Home";
 import CaseGenerator from "./pages/CaseGenerator";
 import ConceptExample from "./pages/ConceptExample";
@@ -52,7 +51,6 @@ function App() {
           <QAProvider>
             <TooltipProvider>
               <Toaster />
-              <VisitorCounter />
               <Router />
             </TooltipProvider>
           </QAProvider>
