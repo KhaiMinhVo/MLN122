@@ -43,8 +43,8 @@ export default function Revolutions() {
                         <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-blue-400">Đứt gãy công nghệ</h3>
                     </div>
 
-                    <div className="grid lg:grid-cols-12 gap-6 md:gap-7 lg:items-center">
-                        <article className={`lg:col-span-7 rounded-xl border p-6 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-slate-100 border-slate-200"}`}>
+                    <div className="grid lg:grid-cols-12 gap-12 md:gap-10 lg:items-stretch pl-0 lg:min-h-[350px]">
+                        <article className={`lg:col-span-5 rounded-xl border p-6 ${theme === "dark" ? "bg-slate-800 border-slate-700" : "bg-slate-100 border-slate-200"}`}>
                             <div className="flex items-center gap-2 mb-4">
                                 <AlertTriangle className="w-5 h-5 text-blue-400" />
                                 <h4 className="text-2xl font-bold text-blue-400">II. Đứt gãy công nghệ</h4>
@@ -59,11 +59,11 @@ export default function Revolutions() {
                             </p>
                         </article>
 
-                        <div className="lg:col-span-5 rounded-xl overflow-hidden">
+                        <div className="lg:col-span-7 rounded-xl overflow-hidden h-full lg:-ml-6">
                             <img
                                 src="/Gemini_Generated_Image_8vx0rz8vx0rz8vx0.png"
                                 alt="Minh họa đứt gãy công nghệ"
-                                className="w-full aspect-[16/10] lg:aspect-[4/3] max-h-[420px] object-cover"
+                                className="w-full h-full object-cover"
                             />
                         </div>
                     </div>

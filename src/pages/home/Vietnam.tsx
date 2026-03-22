@@ -11,9 +11,9 @@ export default function Vietnam() {
                 </h2>
 
                 <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] gap-8 lg:gap-12 items-start lg:items-center mb-16">
-                    <div className="w-full max-w-[560px] mx-auto">
-                        <div className={`overflow-hidden rounded-xl border shadow-2xl transition-all duration-300 ${theme === "dark" ? "border-slate-700" : "border-slate-200"}`}>
-                            <img src="/EVT_6981-1.jpg" alt="Việt Nam trong tiến trình công nghiệp hóa, hiện đại hóa" className="w-full aspect-[16/10] object-cover object-center hover:scale-[1.02] transition-transform duration-500" />
+                    <div className="w-full h-full">
+                        <div className={`overflow-hidden rounded-xl border shadow-2xl transition-all duration-300 h-full ${theme === "dark" ? "border-slate-700" : "border-slate-200"}`}>
+                            <img src="/img0619-1686739562726262510216.jpg" alt="Việt Nam trong tiến trình công nghiệp hóa, hiện đại hóa" className="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-500" />
                         </div>
                     </div>
                     <div>
