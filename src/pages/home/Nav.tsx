@@ -65,7 +65,7 @@ export default function Nav() {
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Phần I
+                            Cơ sở lý luận
                         </motion.a>
                         <motion.a
                             variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
@@ -73,7 +73,7 @@ export default function Nav() {
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Phần II - III
+                            Đứt gãy và tác động
                         </motion.a>
                         <motion.a
                             variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
@@ -81,7 +81,7 @@ export default function Nav() {
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Phần IV
+                            Tác động ở Việt Nam
                         </motion.a>
                         <motion.a
                             variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
@@ -89,7 +89,7 @@ export default function Nav() {
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Phần V
+                            Yêu cầu khách quan
                         </motion.a>
                         <motion.a
                             variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
@@ -97,7 +97,7 @@ export default function Nav() {
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1 transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Tổng Kết
+                            Kết luận
                         </motion.a>
                     </motion.div>
 

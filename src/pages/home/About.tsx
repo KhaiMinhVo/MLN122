@@ -27,7 +27,7 @@ export default function About() {
                         Phần I
                     </p>
                     <h2 className="py-2 text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                        Cơ sở lý luận (trọng tâm Mác - Lênin)
+                        Cơ sở lý luận trọng tâm Mác - Lênin
                     </h2>
                 </div>
 

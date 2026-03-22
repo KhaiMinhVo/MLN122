@@ -104,7 +104,7 @@ export default function Models() {
                     >
                         <div className={`rounded-2xl border p-3 sticky top-28 ${theme === "dark" ? "bg-slate-900/80 border-slate-700" : "bg-cyan-50/70 border-cyan-200"}`}>
                             <img
-                                src="/tải xuống (6).jpg"
+                                src="/hien-dai-hoa-la-gi_2605173503.jpeg"
                                 alt="Minh hoa chuong 6"
                                 className="w-full h-56 md:h-64 rounded-xl object-cover object-center"
                                 loading="lazy"

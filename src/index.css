@@ -119,7 +119,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: var(--background);
+    background-image:
+      linear-gradient(to bottom, rgb(2 6 23 / 78%), rgb(2 6 23 / 82%)),
+      url('/cong-nghiep-hoa-la-gi-1_1909175301.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   button:not(:disabled),

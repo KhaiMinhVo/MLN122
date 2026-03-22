@@ -73,7 +73,7 @@ export default function Revolutions() {
                     >
                         <div className="flex items-center gap-2 mb-4">
                             <Sparkles className="w-5 h-5 text-blue-400" />
-                            <h3 className="text-2xl font-bold text-blue-400">III.1 Mặt tích cực</h3>
+                            <h3 className="text-2xl font-bold text-blue-400">1. Mặt tích cực</h3>
                         </div>
                         <ul className={`space-y-2 text-sm ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
                             <li>• Tăng năng suất: tự động hóa, trí tuệ nhân tạo.</li>
@@ -89,7 +89,7 @@ export default function Revolutions() {
                     >
                         <div className="flex items-center gap-2 mb-4">
                             <CircleSlash className="w-5 h-5 text-cyan-400" />
-                            <h3 className="text-2xl font-bold text-cyan-400">III.2 Mặt tiêu cực</h3>
+                            <h3 className="text-2xl font-bold text-cyan-400">2. Mặt tiêu cực</h3>
                         </div>
                         <ul className={`space-y-2 text-sm ${theme === "dark" ? "text-slate-300" : "text-slate-700"}`}>
                             <li>• Tăng bất bình đẳng doanh nghiệp và lao động.</li>
