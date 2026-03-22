@@ -20,31 +20,22 @@ export default function Revolutions() {
     const { theme } = useTheme();
 
     return (
-        <section id="revolutions" className={`relative pt-4 pb-24 lg:pb-28 px-4 scroll-mt-[84px] overflow-x-clip transition-colors duration-300 ${theme === "dark" ? "bg-slate-900" : "bg-white"}`}>
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <img
-                    src="/tải xuống (5).jpg"
-                    alt=""
-                    className="w-full h-full object-cover"
-                    style={{ opacity: theme === "dark" ? 0.2 : 0.12 }}
-                />
-                <div className={`absolute inset-0 ${theme === "dark" ? "bg-slate-900/70" : "bg-white/70"}`} />
-            </div>
-
-            <div className="max-w-6xl mx-auto relative z-10">
-                <div className="mb-10">
-                    <p className={`text-sm font-semibold uppercase tracking-[0.16em] ${theme === "dark" ? "text-cyan-300" : "text-cyan-700"}`}>
-                        Phần II - III
-                    </p>
-                    <h2 className="py-2 text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                        Đứt gãy công nghệ và tác động hai mặt
-                    </h2>
+        <>
+            <section id="chapter-2" className={`relative pt-4 pb-20 lg:pb-24 px-4 scroll-mt-[96px] overflow-x-clip transition-colors duration-300 ${theme === "dark" ? "bg-slate-900" : "bg-white"}`}>
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <img
+                        src="/tải xuống (5).jpg"
+                        alt=""
+                        className="w-full h-full object-cover"
+                        style={{ opacity: theme === "dark" ? 0.2 : 0.12 }}
+                    />
+                    <div className={`absolute inset-0 ${theme === "dark" ? "bg-slate-900/70" : "bg-white/70"}`} />
                 </div>
 
-                <section
-                    id="chapter-2"
-                    className={`scroll-mt-[96px] mb-20 relative isolate overflow-hidden rounded-2xl border p-4 md:p-5 lg:min-h-[calc(100vh-104px)] lg:flex lg:flex-col lg:justify-center ${theme === "dark" ? "bg-slate-900/70 border-slate-700/70" : "bg-slate-50 border-slate-200"}`}
-                >
+                <div className="max-w-6xl mx-auto relative z-10">
+                    <div
+                        className={`relative isolate overflow-hidden rounded-2xl border p-4 md:p-5 lg:min-h-[calc(100vh-104px)] lg:flex lg:flex-col lg:justify-center ${theme === "dark" ? "bg-slate-900/70 border-slate-700/70" : "bg-slate-50 border-slate-200"}`}
+                    >
                     <div className="mb-6 md:mb-7 text-left">
                         <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${theme === "dark" ? "text-blue-300" : "text-blue-700"}`}>
                             Phần II
@@ -76,12 +67,25 @@ export default function Revolutions() {
                             />
                         </div>
                     </div>
-                </section>
+                    </div>
+                </div>
+            </section>
 
-                <section
-                    id="chapter-3"
-                    className={`scroll-mt-[96px] relative isolate overflow-hidden rounded-2xl border p-4 md:p-5 ${theme === "dark" ? "bg-slate-900/70 border-slate-700/70" : "bg-slate-50 border-slate-200"}`}
-                >
+            <section id="chapter-3" className={`relative pt-4 pb-24 lg:pb-28 px-4 scroll-mt-[96px] overflow-x-clip transition-colors duration-300 ${theme === "dark" ? "bg-slate-900" : "bg-white"}`}>
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <img
+                        src="/tải xuống (5).jpg"
+                        alt=""
+                        className="w-full h-full object-cover"
+                        style={{ opacity: theme === "dark" ? 0.2 : 0.12 }}
+                    />
+                    <div className={`absolute inset-0 ${theme === "dark" ? "bg-slate-900/70" : "bg-white/70"}`} />
+                </div>
+
+                <div className="max-w-6xl mx-auto relative z-10">
+                    <section
+                        className={`relative isolate overflow-hidden rounded-2xl border p-4 md:p-5 ${theme === "dark" ? "bg-slate-900/70 border-slate-700/70" : "bg-slate-50 border-slate-200"}`}
+                    >
                     <div className="mb-6 md:mb-7 text-left">
                         <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${theme === "dark" ? "text-cyan-300" : "text-cyan-700"}`}>
                             Phần III
@@ -150,8 +154,9 @@ export default function Revolutions() {
                         </motion.article>
                         </div>
                     </motion.div>
-                </section>
-            </div>
-        </section>
+                    </section>
+                </div>
+            </section>
+        </>
     );
 }

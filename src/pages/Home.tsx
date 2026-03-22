@@ -9,16 +9,23 @@ import CTA from "./home/CTA";
 import Footer from "./home/Footer";
 import { useEffect, useRef } from "react";
 
-const HOME_SECTION_IDS = ["mo-dau", "about", "case-fpt", "chapter-2", "chapter-3", "models", "models-part5", "vietnam", "cta", "footer"];
-const SNAP_LOCK_MS = 950;
-const WHEEL_THRESHOLD = 12;
-const WHEEL_IDLE_MS = 140;
+const HOME_SECTION_IDS = [
+  "mo-dau",
+  "about",
+  "case-fpt",
+  "chapter-2",
+  "chapter-3",
+  "models",
+  "models-part5",
+  "vietnam",
+  "cta",
+  "footer",
+];
+
+const SNAP_LOCK_MS = 850;
 
 export default function Home() {
   const isScrollingRef = useRef(false);
-  const lastSnapAtRef = useRef(0);
-  const wheelDeltaRef = useRef(0);
-  const wheelIdleTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const sections = HOME_SECTION_IDS
@@ -45,20 +52,21 @@ export default function Home() {
       return nearestIndex;
     };
 
-    const flushWheelGesture = () => {
+    const handleWheel = (event: WheelEvent) => {
+      if (window.innerWidth <= 1024) {
+        return;
+      }
+
+      if (Math.abs(event.deltaY) < 10) {
+        return;
+      }
+
       if (isScrollingRef.current) {
-        wheelDeltaRef.current = 0;
+        event.preventDefault();
         return;
       }
 
-      const totalDelta = wheelDeltaRef.current;
-      wheelDeltaRef.current = 0;
-
-      if (Math.abs(totalDelta) < WHEEL_THRESHOLD) {
-        return;
-      }
-
-      const direction = totalDelta > 0 ? 1 : -1;
+      const direction = event.deltaY > 0 ? 1 : -1;
       const currentIndex = getCurrentIndex();
       const nextIndex = Math.max(0, Math.min(sections.length - 1, currentIndex + direction));
 
@@ -66,8 +74,8 @@ export default function Home() {
         return;
       }
 
+      event.preventDefault();
       isScrollingRef.current = true;
-      lastSnapAtRef.current = Date.now();
       sections[nextIndex].scrollIntoView({ behavior: "smooth", block: "start" });
 
       window.setTimeout(() => {
@@ -75,41 +83,10 @@ export default function Home() {
       }, SNAP_LOCK_MS);
     };
 
-    const handleWheel = (event: WheelEvent) => {
-      if (window.innerWidth <= 1024) {
-        return;
-      }
-
-      const now = Date.now();
-      if (now - lastSnapAtRef.current < SNAP_LOCK_MS) {
-        event.preventDefault();
-        return;
-      }
-
-      if (isScrollingRef.current) {
-        event.preventDefault();
-        return;
-      }
-
-      event.preventDefault();
-      wheelDeltaRef.current += event.deltaY;
-
-      if (wheelIdleTimerRef.current !== null) {
-        window.clearTimeout(wheelIdleTimerRef.current);
-      }
-
-      wheelIdleTimerRef.current = window.setTimeout(() => {
-        flushWheelGesture();
-      }, WHEEL_IDLE_MS);
-    };
-
     window.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
-      if (wheelIdleTimerRef.current !== null) {
-        window.clearTimeout(wheelIdleTimerRef.current);
-      }
     };
   }, []);
 
@@ -126,10 +103,12 @@ export default function Home() {
       <Footer />
       <style>{`
         html {
+          /* Chế độ cuộn mượt tự nhiên khi click vào menu */
           scroll-behavior: smooth;
         }
 
         section {
+          /* Trừ hao khoảng trống bằng đúng chiều cao của Navbar (84px) */
           scroll-margin-top: 84px;
         }
 
