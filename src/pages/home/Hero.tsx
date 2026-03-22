@@ -14,7 +14,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section id="mo-dau" className="relative h-screen flex items-center justify-center overflow-hidden pt-20 scroll-mt-[84px]">
+        <section id="mo-dau" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20 scroll-mt-[84px]">
             <div className="absolute inset-0 z-0">
                 <img
                     src="/tải xuống (5).jpg"
@@ -39,13 +39,13 @@ export default function Hero() {
                     }`} style={{ animationDelay: "1s" }}></div>
             </div>
 
-            <div className="relative z-10 text-center max-w-5xl mx-auto px-4 animate-fade-in">
+            <div className="relative z-10 text-center max-w-6xl mx-auto px-4 animate-fade-in">
                 <div className={`rounded-2xl px-4 py-6 md:px-8 md:py-8 backdrop-blur-sm border ${theme === "dark" ? "bg-slate-900/35 border-slate-700/40" : "bg-white/55 border-white/70"}`}>
-                    <h1 className="font-bold mb-6 tracking-tight leading-[1.15] text-5xl md:text-6xl lg:text-7xl">
-                        <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent drop-shadow-sm">
+                    <h1 className="font-bold mb-6 pb-1 tracking-tight leading-[1.22] text-4xl md:text-5xl lg:text-6xl">
+                        <span className="block md:whitespace-nowrap bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent drop-shadow-sm">
                             Công nghiệp hóa, hiện đại hóa
                         </span>
-                        <span className="block mt-2 bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-200 bg-clip-text text-transparent drop-shadow-sm text-5xl md:text-6xl">
+                        <span className="block mt-2 leading-[1.3] bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-200 bg-clip-text text-transparent drop-shadow-sm text-4xl md:text-5xl lg:text-6xl">
                             trong thời đại đứt gãy công nghệ
                         </span>
                     </h1>

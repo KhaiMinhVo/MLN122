@@ -9,11 +9,16 @@ import CTA from "./home/CTA";
 import Footer from "./home/Footer";
 import { useEffect, useRef } from "react";
 
-const HOME_SECTION_IDS = ["mo-dau", "about", "revolutions", "models", "models-part5", "vietnam", "cta", "footer"];
+const HOME_SECTION_IDS = ["mo-dau", "about", "case-fpt", "chapter-2", "chapter-3", "models", "models-part5", "vietnam", "cta", "footer"];
+const SNAP_LOCK_MS = 950;
+const WHEEL_THRESHOLD = 12;
+const WHEEL_IDLE_MS = 140;
 
 export default function Home() {
   const isScrollingRef = useRef(false);
-  const currentSectionIndexRef = useRef(0);
+  const lastSnapAtRef = useRef(0);
+  const wheelDeltaRef = useRef(0);
+  const wheelIdleTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const sections = HOME_SECTION_IDS
@@ -24,19 +29,50 @@ export default function Home() {
       return;
     }
 
-    const updateCurrentIndex = () => {
-      let closestIndex = 0;
-      let closestDistance = Number.POSITIVE_INFINITY;
+    const getCurrentIndex = () => {
+      const scrollTop = window.scrollY;
+      let nearestIndex = 0;
+      let nearestDistance = Number.POSITIVE_INFINITY;
 
       sections.forEach((section, index) => {
-        const distance = Math.abs(section.getBoundingClientRect().top);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = index;
+        const distance = Math.abs(section.offsetTop - scrollTop);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearestIndex = index;
         }
       });
 
-      currentSectionIndexRef.current = closestIndex;
+      return nearestIndex;
+    };
+
+    const flushWheelGesture = () => {
+      if (isScrollingRef.current) {
+        wheelDeltaRef.current = 0;
+        return;
+      }
+
+      const totalDelta = wheelDeltaRef.current;
+      wheelDeltaRef.current = 0;
+
+      if (Math.abs(totalDelta) < WHEEL_THRESHOLD) {
+        return;
+      }
+
+      const direction = totalDelta > 0 ? 1 : -1;
+      const currentIndex = getCurrentIndex();
+      const nextIndex = Math.max(0, Math.min(sections.length - 1, currentIndex + direction));
+
+      if (nextIndex === currentIndex) {
+        return;
+      }
+
+      isScrollingRef.current = true;
+      lastSnapAtRef.current = Date.now();
+      sections[nextIndex].scrollIntoView({ behavior: "smooth", block: "start" });
+
+      window.setTimeout(() => {
+        isScrollingRef.current = false;
+      }, SNAP_LOCK_MS);
     };
 
     const handleWheel = (event: WheelEvent) => {
@@ -44,7 +80,9 @@ export default function Home() {
         return;
       }
 
-      if (Math.abs(event.deltaY) < 16) {
+      const now = Date.now();
+      if (now - lastSnapAtRef.current < SNAP_LOCK_MS) {
+        event.preventDefault();
         return;
       }
 
@@ -53,43 +91,25 @@ export default function Home() {
         return;
       }
 
-      updateCurrentIndex();
-
-      const direction = event.deltaY > 0 ? 1 : -1;
-      const currentIndex = currentSectionIndexRef.current;
-      const isAtFirst = currentIndex === 0;
-      const isAtLast = currentIndex === sections.length - 1;
-
-      if ((direction < 0 && isAtFirst) || (direction > 0 && isAtLast)) {
-        return;
-      }
-
-      const nextIndex = Math.max(
-        0,
-        Math.min(sections.length - 1, currentIndex + direction),
-      );
-
-      if (nextIndex === currentIndex) {
-        return;
-      }
-
       event.preventDefault();
-      isScrollingRef.current = true;
-      currentSectionIndexRef.current = nextIndex;
-      sections[nextIndex].scrollIntoView({ behavior: "smooth", block: "start" });
+      wheelDeltaRef.current += event.deltaY;
 
-      window.setTimeout(() => {
-        isScrollingRef.current = false;
-      }, 750);
+      if (wheelIdleTimerRef.current !== null) {
+        window.clearTimeout(wheelIdleTimerRef.current);
+      }
+
+      wheelIdleTimerRef.current = window.setTimeout(() => {
+        flushWheelGesture();
+      }, WHEEL_IDLE_MS);
     };
 
-    updateCurrentIndex();
     window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("scroll", updateCurrentIndex, { passive: true });
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("scroll", updateCurrentIndex);
+      if (wheelIdleTimerRef.current !== null) {
+        window.clearTimeout(wheelIdleTimerRef.current);
+      }
     };
   }, []);
 

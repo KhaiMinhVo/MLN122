@@ -69,11 +69,19 @@ export default function Nav() {
                         </motion.a>
                         <motion.a
                             variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
-                            href="#revolutions"
+                            href="#chapter-2"
                             className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
                                 }`}
                         >
-                            Đứt gãy và tác động
+                            Đứt gãy công nghệ
+                        </motion.a>
+                        <motion.a
+                            variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
+                            href="#chapter-3"
+                            className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-colors ${theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
+                                }`}
+                        >
+                            Tác động hai mặt
                         </motion.a>
                         <motion.a
                             variants={{ hidden: { opacity: 0, y: -6 }, visible: { opacity: 1, y: 0 } }}
